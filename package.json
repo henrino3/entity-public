@@ -1,0 +1,23 @@
+{
+  "name": "entity",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "node e2e/test-browser.js",
+    "test:e2e": "node e2e/test-browser.js",
+    "electron": "npm --prefix electron run dev",
+    "electron:build": "npm --prefix electron run build"
+  },
+  "workspaces": [
+    "packages/*",
+    "electron"
+  ],
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "cors": "^2.8.6"
+  },
+  "devDependencies": {
+    "@types/chokidar": "^1.7.5",
+    "@types/ws": "^8.18.1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@entity/server",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/server/src/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "express": "^4.19.2",
+    "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

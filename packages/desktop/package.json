@@ -1,0 +1,60 @@
+{
+  "name": "entity-desktop",
+  "version": "0.1.0",
+  "description": "Entity - AI-native markdown editor for OpenClaw agents",
+  "main": "main.js",
+  "scripts": {
+    "dev": "DEV_URL=http://localhost:5173 electron .",
+    "build": "cd ../app && npx vite build && cp -r dist ../desktop/renderer && echo 'Renderer built'",
+    "package": "npm run build && electron-builder --mac",
+    "package:all": "npm run build && electron-builder --mac --win --linux"
+  },
+  "build": {
+    "appId": "com.entity.app",
+    "productName": "Entity",
+    "files": [
+      "main.js",
+      "renderer/**/*",
+      "icon.png"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg"
+      ],
+      "darkModeSupport": true
+    },
+    "dmg": {
+      "title": "Entity",
+      "iconSize": 80,
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Office"
+    }
+  },
+  "devDependencies": {
+    "electron-builder": "^24.13.3",
+    "electron": "^31.3.1"
+  },
+  "author": "Henry Mascot"
+}
